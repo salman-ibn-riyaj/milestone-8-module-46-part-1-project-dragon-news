@@ -18,14 +18,22 @@ const breakingNews = [
   },
 ];
 const BreakingNews = () => {
-
-
-  return <Marquee>
-
-    {
-        breakingNews.map(news => <span className="mr-10" key={news.id} news={news}>{news.title}</span>)
-    }
-  </Marquee>;
+  return (
+    <div className="mb-8">
+      <div className="flex items-center gap-2 bg-gray-200 p-1 container mx-auto">
+        <button className="bg-red-700 text-white p-1 rounded-md font-semibold px-3">
+          Latest
+        </button>
+        <Marquee pauseOnHover={true} speed={100}>
+          {breakingNews.map((news) => (
+            <span className="mr-10" key={news.id} news={news}>
+              {news.title}
+            </span>
+          ))}
+        </Marquee>
+      </div>
+    </div>
+  );
 };
 
 export default BreakingNews;

@@ -12,10 +12,7 @@ const Header = () => {
 
             <p>{format(new Date(), "EEEE MMM dd yyyy")}</p>
 
-            <div className='flex items-center gap-2 bg-gray-200 p-1 container mx-auto'>
-                <button className='bg-red-700 text-white p-1 rounded-md font-semibold px-3'>Latest</button>
-                <BreakingNews></BreakingNews>
-            </div>
+            
         </div>
     );
 };
