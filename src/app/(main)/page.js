@@ -1,3 +1,6 @@
+import LeftSideBar from "@/components/homepage/news/LeftSideBar";
+import RightSideBar from "@/components/homepage/news/RightSideBar";
+
 const getCategory = async () => {
   const res = await fetch(
     "https://openapi.programming-hero.com/api/news/categories",
@@ -16,11 +19,7 @@ export default async function Home() {
     <div className="container mx-auto grid grid-cols-12 gap-4 my-10">
       {/* all category  */}
       <div className="col-span-3">
-        <h2 className="font-semibold mb-4">All Categories</h2>
-
-        <ul className="flex flex-col gap-2 text-gray-500">
-          {categories.map(category => <li className="bg-slate-200 p-2 rounded-md text-center" category={category} key={category.category_id}>{category.category_name}</li>)}
-        </ul>
+        <LeftSideBar categories={categories} activeId={null}></LeftSideBar>
       </div>
 
       {/* Dragon News Home  */}
@@ -30,7 +29,7 @@ export default async function Home() {
 
       {/* Log in with  */}
       <div className="col-span-3">
-        <h2 className="font-semibold">Login With</h2>
+        <RightSideBar></RightSideBar>
       </div>
     </div>
   );
