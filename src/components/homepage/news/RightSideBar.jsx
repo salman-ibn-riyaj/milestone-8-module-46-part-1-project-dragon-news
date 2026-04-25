@@ -48,7 +48,7 @@ const RightSideBar = () => {
             <Image src={ClassImg} alt="" width={400} height={400}></Image>
             <Image src={Swimming} alt="" width={400} height={400}></Image>
             <Image src={PlayGround} alt="" width={400} height={400}></Image>
-            <Image src={Bg} alt="" width={400} height={400}></Image>
+            <Image className="pt-2" src={Bg} alt="" width={400} height={400}></Image>
         </div>
       </div>
     </div>
