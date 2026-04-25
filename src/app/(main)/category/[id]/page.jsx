@@ -1,4 +1,5 @@
 import LeftSideBar from "@/components/homepage/news/LeftSideBar";
+import NewsCard from "@/components/homepage/news/NewsCard";
 import RightSideBar from "@/components/homepage/news/RightSideBar";
 import { getCategory, getNewsByCategory } from "@/lib/data";
 
@@ -22,9 +23,9 @@ const CategorizedNewsPageDynamic = async ({ params }) => {
 
         <div className="space-y-2">
           {news.length > 0? news.map((n) => (
-            <p className="border p-2 rounded-md" key={n._id} n={n}>
+            <NewsCard className="border p-2 rounded-md" key={n._id} news={n}>
               {n.title}
-            </p>
+            </NewsCard>
           )):<div className="flex justify-center items-center h-[50vh] text-4xl font-bold">No news Found!</div>}
         </div>
       </div>
