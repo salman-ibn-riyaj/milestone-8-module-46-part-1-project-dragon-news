@@ -1,4 +1,7 @@
-
+export const metadata = {
+  title: "About us",
+  description: "Best new portal in my world",
+};
 
 const AboutUsPage = () => {
     return (
