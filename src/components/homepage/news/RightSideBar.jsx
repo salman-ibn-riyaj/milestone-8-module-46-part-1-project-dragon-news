@@ -1,23 +1,37 @@
+'use client'
 import Image from "next/image";
-import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
-import ClassImg from '../../../assets/class.png'
-import Swimming from '../../../assets/swimming.png'
-import PlayGround from '../../../assets/playground.png'
-import Bg from '../../../assets/bg.png'
+import { FaFacebookF, FaGithub, FaGoogle, FaInstagram, FaTwitter } from "react-icons/fa";
+import ClassImg from "../../../assets/class.png";
+import Swimming from "../../../assets/swimming.png";
+import PlayGround from "../../../assets/playground.png";
+import Bg from "../../../assets/bg.png";
+import { authClient } from "@/lib/auth-client";
 
 const RightSideBar = () => {
+  const handleGoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+    console.log(data);
+  };
+  const handleGithubSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "github",
+    });
+    console.log(data);
+  };
   return (
     <div>
       <h2 className="font-semibold mb-4">Login With</h2>
 
       <div className="flex flex-col gap-1">
-        <button className="btn flex items-center gap-2 text-blue-500">
-          {" "}
-          <FaFacebookF />
-          Log in with Facebook
+        <button onClick={handleGoogleSignIn} className="btn flex items-center gap-2 text-blue-500">
+         
+          <FaGoogle />
+          Log in with Google
         </button>
 
-        <button className="btn flex items-center gap-2">
+        <button onClick={handleGithubSignIn} className="btn flex items-center gap-2">
           <FaGithub />
           Log in with Github
         </button>
@@ -45,10 +59,16 @@ const RightSideBar = () => {
         <h2 className="font-semibold my-4">Q Zone</h2>
 
         <div>
-            <Image src={ClassImg} alt="" width={400} height={400}></Image>
-            <Image src={Swimming} alt="" width={400} height={400}></Image>
-            <Image src={PlayGround} alt="" width={400} height={400}></Image>
-            <Image className="pt-2" src={Bg} alt="" width={400} height={400}></Image>
+          <Image src={ClassImg} alt="" width={400} height={400}></Image>
+          <Image src={Swimming} alt="" width={400} height={400}></Image>
+          <Image src={PlayGround} alt="" width={400} height={400}></Image>
+          <Image
+            className="pt-2"
+            src={Bg}
+            alt=""
+            width={400}
+            height={400}
+          ></Image>
         </div>
       </div>
     </div>
