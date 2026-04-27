@@ -67,6 +67,7 @@ const RegisterPage = () => {
             placeholder="Photo url"
             {...register("photo", { required: "Photo url field is required" })}
           />
+          
           {errors.photo && <span>{errors.photo.message}</span>}
 
           <label className="label font-bold">Password</label>
